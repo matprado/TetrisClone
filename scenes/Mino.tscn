@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scripts/Mino.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/Blue_Mino.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/Green_Mino.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/Orange_Mino.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/Pink_Mino.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/Red_Mino.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/Yellow_Mino.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/LightBlue_Mino.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/Bomb_Mino.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "blue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "green",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "orange",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "pink",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "red",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "yellow",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "rainbow",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "bomb",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "light_blue",
+"speed": 5.0
+} ]
+
+[node name="Mino" type="Node2D"]
+position = Vector2( 16, 16 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "rainbow"
+frame = 4
+playing = true
+

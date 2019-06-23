@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/Tetrominos/Z.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Mino.tscn" type="PackedScene" id=2]
+
+[node name="Z" type="KinematicBody2D"]
+position = Vector2( 48, 48 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Minos" type="Node2D" parent="."]
+editor/display_folded = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Mino" parent="Minos" instance=ExtResource( 2 )]
+position = Vector2( 32, 32 )
+
+[node name="Mino2" parent="Minos" instance=ExtResource( 2 )]
+position = Vector2( 0, 32 )
+
+[node name="Mino3" parent="Minos" instance=ExtResource( 2 )]
+position = Vector2( -32, 0 )
+
+[node name="Mino4" parent="Minos" instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+
+[node name="ControlTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="DropTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ControlTimer" to="." method="_on_ControlTimer_timeout"]
+[connection signal="timeout" from="DropTimer" to="." method="_on_DropTimer_timeout"]

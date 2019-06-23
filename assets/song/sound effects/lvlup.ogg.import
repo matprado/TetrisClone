@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lvlup.ogg-9708d29706eb6076bc8453df1d2cfdcc.oggstr"
+
+[deps]
+
+source_file="res://assets/song/sound effects/lvlup.ogg"
+dest_files=[ "res://.import/lvlup.ogg-9708d29706eb6076bc8453df1d2cfdcc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

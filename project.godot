@@ -72,8 +72,8 @@ Global="*res://scripts/Global.gd"
 
 [display]
 
-window/size/width=960
-window/size/height=720
+window/size/width=540
+window/size/height=960
 window/size/resizable=false
 window/size/always_on_top=true
 window/handheld/orientation="portrait"

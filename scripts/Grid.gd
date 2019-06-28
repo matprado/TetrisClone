@@ -14,7 +14,7 @@ var grid = []
 var grid_size = Vector2(10, 20)
 
 #Variável de correção da borda
-var BORDA = Vector2(-3, -1)
+var BORDA = Vector2(-1, -1)
 
 #Array com próximas 3 peças que será tratado como uma fila
 var next_3 = []
@@ -55,9 +55,6 @@ var level
 #fator de incremento do nível
 var level_factor
 
-#quantidade de linhas eliminadas
-var line
-
 #boolean que indica se o jogo está pausado ou não
 var is_paused
 
@@ -68,7 +65,6 @@ func _ready():
 	score = 0
 	level = 1
 	level_factor = 500
-	line = 0
 	
 	get_parent().get_node("Pause").hide()
 	is_paused = false
@@ -215,8 +211,6 @@ func _process(delta):
 				down_arrows_above(i)
 				score += 100
 				update_score()
-				line += 1
-				update_line()
 	pass
 
 
@@ -258,7 +252,7 @@ func new_tetromino():
 
 #função para mostrar próximas peças pela primeira vez
 func first_show_next():
-	var base_position = Vector2(592, 144)
+	var base_position = Vector2(460, 144)
 	var offset = 0
 	for i in range(3):
 		#instancia um tetromino
@@ -275,7 +269,7 @@ func first_show_next():
 
 #função para mostrar peças
 func show_next():
-	var base_position = Vector2(592, 144)
+	var base_position = Vector2(460, 144)
 	var offset = 0
 	var past = $Next3.get_children()
 	#remove os antigos
@@ -462,9 +456,6 @@ func update_score():
 func update_level():
 	get_parent().get_node("LevelNumber").text = str(level)
 
-#função de atualização das linhas eliminadas 
-func update_line():
-	get_parent().get_node("LineNumber").text = str(line)
 
 #função de atualização do score final
 func update_final_score():

@@ -31,6 +31,5 @@ position = Vector2( 0, 64 )
 
 [node name="ControlTimer" type="Timer" parent="."]
 wait_time = 0.1
-
 [connection signal="timeout" from="DropTimer" to="." method="_on_DropTimer_timeout"]
 [connection signal="timeout" from="ControlTimer" to="." method="_on_ControlTimer_timeout"]

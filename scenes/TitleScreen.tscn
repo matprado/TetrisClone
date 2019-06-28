@@ -257,7 +257,6 @@ flat = true
 
 [node name="MenuTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-
 [connection signal="pressed" from="Start/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Music/MusicButton" to="." method="_on_MusicButton_pressed"]
 [connection signal="pressed" from="Tutorial/TutorialButton" to="." method="_on_TutorialButton_pressed"]
